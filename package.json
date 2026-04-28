@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "react-router-dom": "^7.14.1",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.2.2"
+  }
+}
