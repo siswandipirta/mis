@@ -5,10 +5,10 @@ export default function Navbar({ user, onLogout }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full bg-white shadow px-6 py-3 flex justify-between items-center">
+    <header className="w-full bg-gray-900 text-white shadow px-6 py-3 flex justify-between items-center">
 
       {/* TITLE */}
-      <h1 className="font-bold text-lg">MIS Dashboard</h1>
+      <h1 className="font-semibold text-lg">MIS Dashboard</h1>
 
       {/* PROFILE */}
       <div className="relative">
@@ -22,7 +22,7 @@ export default function Navbar({ user, onLogout }) {
 
         {/* DROPDOWN */}
         {open && (
-          <div className="absolute right-0 mt-2 bg-white border rounded shadow w-40">
+          <div className="absolute right-0 mt-2 bg-white text-gray-900 border rounded shadow w-40">
 
             <div className="p-2 hover:bg-gray-100 cursor-pointer">
               Profile
@@ -40,6 +40,6 @@ export default function Navbar({ user, onLogout }) {
         )}
       </div>
 
-    </div>
+    </header>
   );
 }
