@@ -8,7 +8,7 @@ function KPIPage({ token }) {
   useEffect(() => {
     const fetch = () => {
       axios
-        .get("http://localhost/mis/mis/backend/kpi.php", {
+        .get("http://localhost/MIS/MIS/Backend/kpi.php", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((r) => setData(r.data));
@@ -18,13 +18,13 @@ function KPIPage({ token }) {
   }, [token]);
 
   const save = async () => {
-    await axios.post("http://localhost/mis/mis/backend/kpi.php", form, {
+    await axios.post("http://localhost/MIS/MIS/Backend/kpi.php", form, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
     // refresh data after save
     axios
-      .get("http://localhost/mis/mis/backend/kpi.php", {
+      .get("http://localhost/MIS/MIS/Backend/kpi.php", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((r) => setData(r.data));

@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [monitor, setMonitor] = useState({});
   const [listStatus, setListStatus] = useState([]);
   const loadServers = () => {
-    axios.get("http://localhost/mis/mis/backend/servers.php")
+    axios.get("http://localhost/MIS/MIS/Backend/servers.php")
       .then(res => {
         setServers(res.data);
         if (res.data.length > 0) {
@@ -17,16 +17,16 @@ export default function Dashboard() {
   };
 
   const loadMonitor = (ip) => {
-    axios.get(`http://localhost/mis/mis/backend/monitor.php?ip=${ip}`)
+    axios.get(`http://localhost/MIS/MIS/Backend/monitor.php?ip=${ip}`)
       .then(res => setMonitor(res.data));
   };
 
   const loadAllStatus = async () => {
-    const res = await axios.get("http://localhost/mis/mis/backend/servers.php");
+    const res = await axios.get("http://localhost/MIS/MIS/Backend/servers.php");
 
     const results = await Promise.all(
       res.data.map(async (s) => {
-        const r = await axios.get(`http://localhost/mis/mis/backend/monitor.php?ip=${s.ip}`);
+        const r = await axios.get(`http://localhost/MIS/MIS/Backend/monitor.php?ip=${s.ip}`);
         return { ...s, ...r.data };
       })
     );

@@ -13,7 +13,7 @@ export default function Dashboard() {
   const [data, setData] = useState([]);
 
   const loadData = () => {
-    axios.get("http://localhost/mis/mis/backend/kpi.php")
+    axios.get("http://localhost/MIS/MIS/Backend/kpi.php")
       .then(res => setData(res.data));
   };
 

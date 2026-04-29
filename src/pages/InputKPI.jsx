@@ -8,7 +8,7 @@ export default function InputKPI() {
   });
 
   const save = async () => {
-    await axios.post("http://localhost/mis/mis/backend/kpi.php", form);
+    await axios.post("http://localhost/MIS/MIS/Backend/kpi.php", form);
     alert("Data tersimpan");
   };
 
