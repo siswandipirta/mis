@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+	--bg: #0c1620; /* slightly lighter page background */
+	--surface: #0f1b28; /* slightly lighter card/surface */
+	--sidebar-bg: #0b1a26;
+	--sidebar-hover: #0f2937;
+	--accent: #60A5FA; /* stronger, brighter accent */
+	--muted: #9aa4b0;
+	--border: #1f2d3a;
+	--shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--bg); }
+
+/* compact spacing helpers */
+.compact-space .p-4 { padding: 0.5rem !important; }
+.compact-space .px-6 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+.compact-space .py-3 { padding-top: 0.375rem !important; padding-bottom: 0.375rem !important; }
+
+/* Dark-mode helpers for existing classes (avoid editing many files) */
+.dark .bg-white { background-color: var(--surface) !important; }
+.dark .text-gray-900 { color: #e6eef8 !important; }
+.dark .text-gray-500 { color: #9aa4b0 !important; }
+.dark .border-t { border-top-color: var(--border) !important; }
+.dark .border { border-color: var(--border) !important; }
+
+/* Make anchors inherit text color and get accent on hover */
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
